@@ -1,1 +1,82 @@
-/* test */
+* {
+    background-color: rgb(255, 223, 174);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+span {
+    display: flex; 
+    justify-content: center;
+}
+
+/* main */
+
+main {
+    flex: 1 0 auto;
+}
+
+main p {
+    font-size: 40px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#label {
+    display: flex;
+}
+
+#label span {
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+#keyChain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#twoButtons {
+    margin: 10px;
+}
+
+.button {
+    background-color: rgb(233, 214, 181); 
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.5s;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.button:hover {
+    background-color: rgb(232, 201, 146); 
+}
+
+#modeButtons {
+    margin-top: 20px;
+}
+
+#modeButtons button {
+    background-color: rgb(233, 214, 181); 
+    border: none;
+    color: black;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.5s;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#modeButtons button:hover {
+    background-color: rgb(232, 201, 146); 
+}
+
+
+
+
