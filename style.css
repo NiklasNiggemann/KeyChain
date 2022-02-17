@@ -1,6 +1,7 @@
 * {
-    background-color: rgb(255, 223, 174);
+    background-color: rgb(21, 21, 21);
     font-family: Arial, Helvetica, sans-serif;
+    color:white;
 }
 
 span {
@@ -21,7 +22,7 @@ main {
 main p {
     font-size: 40px;
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 18px;
 }
 
 #label {
@@ -46,8 +47,9 @@ main p {
 }
 
 .button {
-    background-color: rgb(233, 214, 181); 
+    background-color: lightgray; 
     border: none;
+    border-radius: 5px;
     color: black;
     padding: 15px 32px;
     text-decoration: none;
@@ -58,15 +60,16 @@ main p {
 }
 
 .button:hover {
-    background-color: rgb(232, 201, 146); 
+    background-color: lightslategray; 
 }
 
 #modeButtons {
     margin-top: 20px;
+    border-radius: 5px;
 }
 
 #modeButtons button {
-    background-color: rgb(233, 214, 181); 
+    background-color: lightgray; 
     border: none;
     color: black;
     padding: 10px 25px;
@@ -78,25 +81,24 @@ main p {
 }
 
 #modeButtons button:hover {
-    background-color: rgb(232, 201, 146); 
+    background-color: lightslategray; 
 }
 
 /* footer */ 
 
 footer {
+    flex: 1 0 auto;
     display: flex; 
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(223, 194, 150);
-}
-
-footer p {
-    background-color: rgb(223, 194, 150);
 }
 
 footer a {
     text-decoration: none;
-    background-color: rgb(223, 194, 150);
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
