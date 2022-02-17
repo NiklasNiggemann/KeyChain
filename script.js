@@ -191,6 +191,7 @@ function showKey(root) {
                     
                 } else if (Fs) {
                     keys[17] = 'E# ';
+                    keys[12] = 'B# ';
                 } else if (Ab) {
                     keys[8] = 'Ab ';
                     keys[10] = 'Bb ';
