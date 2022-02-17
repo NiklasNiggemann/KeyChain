@@ -169,11 +169,9 @@ function showKey(root) {
                     keys[10] = 'Bb ';
                     keys[15] = 'Eb ';
                 } else if (Ab) {          
-                    keys[8] = 'Ab ';
-                    keys[9] = 'Bbb ';
-                    keys[11] = 'Cb ';
-                    keys[16] = 'Fb ';
-                    keys[18] = 'Gb ';
+                    keys[8] = 'G# ';
+                    keys[13] = 'C# ';
+                    keys[15] = 'D# ';
                 } else if (A) {            
                     keys[10] = 'Bb ';
                 } else if (Bb) {            
@@ -188,7 +186,10 @@ function showKey(root) {
             case 'lydian':
                 text.innerHTML = keys[root] + keys[root + 2] + keys[root + 4] + keys[root + 6] + keys[root + 7] + keys[root + 9] + keys[root + 11];
                 if (Cs) {            
-                    
+                    keys[1] = 'Db ';
+                    keys[3] = 'Eb ';
+                    keys[8] = 'Ab ';
+                    keys[10] = 'Bb ';
                 } else if (Fs) {
                     keys[17] = 'E# ';
                     keys[12] = 'B# ';
@@ -284,12 +285,6 @@ function showKey(root) {
                     keys[3] = 'Eb ';
                     keys[8] = 'Ab ';
                     keys[10] = 'Bb ';
-                } else if (Eb) {            
-                    keys[4] = 'Fb ';
-                    keys[6] = 'Gb ';
-                    keys[9] = 'Bbb ';
-                    keys[11] = 'Cb ';
-                    keys[13] = 'Db ';
                 } else if (F) {           
                     keys[6] = 'Gb ';
                     keys[8] = 'Ab ';
@@ -304,14 +299,6 @@ function showKey(root) {
                     keys[10] = 'Bb ';
                     keys[13] = 'Db ';
                     keys[15] = 'Eb ';
-                } else if (Ab) {            
-                    keys[8] = 'Ab ';
-                    keys[9] = 'Bbb ';
-                    keys[11] = 'Cb ';
-                    keys[13] = 'Db ';
-                    keys[14] = 'Ebb ';
-                    keys[16] = 'Fb ';
-                    keys[18] = 'Gb ';
                 } else if (A) {            
                     keys[10] = 'Bb ';
                     keys[15] = 'Eb ';
