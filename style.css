@@ -8,6 +8,10 @@ span {
     justify-content: center;
 }
 
+/* header */ 
+
+
+
 /* main */
 
 main {
@@ -77,6 +81,22 @@ main p {
     background-color: rgb(232, 201, 146); 
 }
 
+/* footer */ 
 
+footer {
+    display: flex; 
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(223, 194, 150);
+}
 
+footer p {
+    background-color: rgb(223, 194, 150);
+}
+
+footer a {
+    text-decoration: none;
+    background-color: rgb(223, 194, 150);
+}
 
