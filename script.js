@@ -126,7 +126,8 @@ function showKey(root) {
                 } else if (G) {
                     keys[10] = 'Bb ';
                 } else if (Ab) {
-                    keys[17] = 'E# ';
+                    keys[11] = 'Cb ';
+                    keys[18] = 'Gb ';
                 } else if (Bb) {
                     keys[10] = 'Bb ';
                     keys[15] = 'Eb ';
@@ -151,10 +152,16 @@ function showKey(root) {
                     keys[3] = 'Eb ';
                     keys[4] = 'Fb ';
                     keys[6] = 'Gb ';
+                    keys[8] = 'Ab ';
+                    keys[10] = 'Bb ';
                     keys[11] = 'Cb ';
                     keys[13] = 'Db '; 
                 } else if (F) {
+                    keys[6] = 'Gb ';
+                    keys[8] = 'Ab ';
                     keys[10] = 'Bb ';
+                    keys[13] = 'Db '; 
+                    keys[15] = 'Eb ';
                 } else if (Fs) {
                     keys[17] = 'E# ';
                 } else if (G) {            
@@ -181,7 +188,7 @@ function showKey(root) {
             case 'lydian':
                 text.innerHTML = keys[root] + keys[root + 2] + keys[root + 4] + keys[root + 6] + keys[root + 7] + keys[root + 9] + keys[root + 11];
                 if (Cs) {            
-                    keys[7] = 'F## ';
+                    
                 } else if (Fs) {
                     keys[17] = 'E# ';
                 } else if (Ab) {
