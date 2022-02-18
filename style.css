@@ -36,7 +36,40 @@ li {
 
 li a {
     color: #e5e7e8;
+    text-decoration: none;
 }
+
+li a:hover {
+    color: #d3d3d5;
+    text-decoration: underline;
+}
+
+header button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px 5px;
+    padding: 5px 10px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    background: #878787;
+}
+
+header button:hover {
+    background: #676767;
+}
+
+header button:after {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+header button:active {
+    background: rgb(62, 62, 62);
+  }
 
 /* main */
 
@@ -46,7 +79,7 @@ main {
 }
 
 main p {
-    font-size: 50px;
+    font-size: 70px;
     margin-bottom: 35px;
 }
 
