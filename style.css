@@ -44,6 +44,7 @@ li a:hover {
 
 header button {
     border: none;
+    border-radius: 2px;
     background: none;
     cursor: pointer;
     display: inline-block;
@@ -143,6 +144,10 @@ main p {
 
 /* footer */ 
 
+hr {
+    color: white;
+}
+
 footer {
     flex: 1 0 auto;
     display: flex; 
@@ -163,10 +168,12 @@ footer a {
     color: #bdbcbc;
 }
 
-footer a:hover {
-    text-decoration: underline;
+footer b:hover {
+    color: #bdbcbc;
 }
 
-.impressum {
-    font-size: 10px;
+#Impressum {
+    font-size: 14px;
+    color: #9d9d9dd7;
+    margin: 15px 0;
 }
