@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 * {
     background-color: rgb(21, 21, 21);
-    font-family: Arial, Helvetica, sans-serif;
     color:white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px; 
 }
 
 span {
@@ -11,18 +18,36 @@ span {
 
 /* header */ 
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
 
+ul {
+    display: flex; 
+}
+
+li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+li a {
+    color: #e5e7e8;
+}
 
 /* main */
 
 main {
     flex: 1 0 auto;
+    color: #edf0f1;
 }
 
 main p {
-    font-size: 40px;
-    margin-top: 5px;
-    margin-bottom: 18px;
+    font-size: 50px;
+    margin-bottom: 35px;
 }
 
 #label {
@@ -64,7 +89,7 @@ main p {
 }
 
 #modeButtons {
-    margin-top: 20px;
+    margin-top: 30px;
     border-radius: 5px;
 }
 
@@ -92,10 +117,18 @@ footer {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 10px;
+    color: #bdbcbc;
 }
 
 footer a {
     text-decoration: none;
+    color: #bdbcbc;
 }
 
 footer a:hover {
