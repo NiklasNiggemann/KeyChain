@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
+/* GENERAL STUFF */
+
 * {
-    color:white;
+    color: white;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,11 +12,12 @@
 }
 
 span {
-    display: flex; 
+    display: flex;
     justify-content: center;
 }
 
-/* header */ 
+
+/* HEADER */
 
 header {
     display: flex;
@@ -26,7 +29,7 @@ header {
 }
 
 ul {
-    display: flex; 
+    display: flex;
 }
 
 li {
@@ -55,7 +58,7 @@ header button {
     -moz-transition: all 0.3s;
     transition: all 0.3s;
     background: #878787;
-    font-size: 16px; 
+    font-size: 16px;
 }
 
 header button:hover {
@@ -70,9 +73,13 @@ header button:after {
 
 header button:active {
     background: rgb(62, 62, 62);
-  }
+}
 
-/* main */
+
+/* SUB PAGES */
+
+
+/* INDEX */
 
 main {
     background-color: rgb(21, 21, 21);
@@ -112,7 +119,7 @@ main p {
 }
 
 .button {
-    background-color: lightgray; 
+    background-color: lightgray;
     border: none;
     border-radius: 5px;
     color: black;
@@ -125,7 +132,7 @@ main p {
 }
 
 .button:hover {
-    background-color: lightslategray; 
+    background-color: lightslategray;
 }
 
 #modeButtons {
@@ -134,7 +141,7 @@ main p {
 }
 
 #modeButtons button {
-    background-color: lightgray; 
+    background-color: lightgray;
     border: none;
     color: black;
     padding: 10px 25px;
@@ -146,14 +153,74 @@ main p {
 }
 
 #modeButtons button:hover {
-    background-color: lightslategray; 
+    background-color: lightslategray;
 }
 
-/* footer */ 
+
+/* ABOUT */
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about h1 {
+    margin: 20px;
+}
+
+.about h2 {
+    margin: 10px;
+}
+
+.aboutText {
+    font-size: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    text-align: center;
+}
+
+
+/* MISTAKE */
+
+.mistake {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mistake h3 {
+    margin: 40px;
+}
+
+.mistake h2 {
+    margin: 20px;
+    text-align: center;
+}
+
+.mistake p {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 150px;
+    margin-right: 150px;
+    text-align: center;
+}
+
+.mistake li {
+    list-style: decimal-leading-zero;
+}
+
+
+/* GENERAL ELEMENTS */
+
+
+/* FOOTER */
 
 footer {
     flex: 1 0 auto;
-    display: flex; 
+    display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
