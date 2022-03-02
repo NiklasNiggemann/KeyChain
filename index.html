@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Key Chain</title>
     <link rel="stylesheet" href="style.css">
+    <meta http-equiv="refresh" content="5" />
 </head>
 
 <body>
 
     <header>
 
-        <a href="index.html"><img width="200" src="logo.png" alt="Logo"></a>
+        <a href="index.html"><img width="160" src="logo.png" alt="Logo"></a>
 
         <ul>
             <li><a href="WhatAreScales.html">What Are Scales?</a></li>
@@ -37,46 +38,46 @@
             <p id="text">Choose Your Key!</p>
 
             <div id="twoButtons">
-                <button id="btn1" class="button" onclick=showC()>C</button>
-                <button id="btn2" class="button" onclick=showCs()>C#</button>
+                <button id="btn1" class="button" onclick=declareRoot(0)>C</button>
+                <button id="btn2" class="button" onclick=declareRoot(1)>C#</button>
             </div>
 
             <div id="twoButtons">
-                <button id="btn3" class="button" onclick=showD()>D</button>
-                <button id="btn4" class="button" onclick=showEb()>Eb</button>
+                <button id="btn3" class="button" onclick=declareRoot(2)>D</button>
+                <button id="btn4" class="button" onclick=declareRoot(3)>D#</button>
             </div>
 
             <div id="twoButtons">
-                <button id="btn5" class="button" onclick=showE()>E</button>
-                <button id="btn6" class="button" onclick=showF()>F</button>
+                <button id="btn5" class="button" onclick=declareRoot(4)>E</button>
+                <button id="btn6" class="button" onclick=declareRoot(5)>F</button>
             </div>
 
             <div id="twoButtons">
-                <button id="btn7" class="button" onclick=showFs()>F#</button>
-                <button id="btn8" class="button" onclick=showG()>G</button>
+                <button id="btn7" class="button" onclick=declareRoot(6)>F#</button>
+                <button id="btn8" class="button" onclick=declareRoot(7)>G</button>
             </div>
 
             <div id="twoButtons">
-                <button id="btn9" class="button" onclick=showAb()>Ab</button>
-                <button id="btn10" class="button" onclick=showA()>A</button>
+                <button id="btn9" class="button" onclick=declareRoot(8)>G#</button>
+                <button id="btn10" class="button" onclick=declareRoot(9)>A</button>
             </div>
 
             <div id="twoButtons">
-                <button id="btn11" class="button" onclick=showBb()>Bb</button>
-                <button id="btn12" class="button" onclick=showB()>B</button>
+                <button id="btn11" class="button" onclick=declareRoot(10)>A#</button>
+                <button id="btn12" class="button" onclick=declareRoot(11)>B</button>
             </div>
 
             <div id="modeButtons">
-                <button id="btn13" class="button" onclick=itIsMajor()>Ionian (Major)</button>
-                <button id="btn14" class="button" onclick=itIsDorian()>Dorian</button>
-                <button id="btn15" class="button" onclick=itIsPhrygian()>Phrygian</button>
-                <button id="btn16" class="button" onclick=itIsLydian()>Lydian</button>
+                <button id="btn13" class="button" onclick=declareMode(0)>Ionian (Major)</button>
+                <button id="btn14" class="button" onclick=declareMode(1)>Dorian</button>
+                <button id="btn15" class="button" onclick=declareMode(2)>Phrygian</button>
+                <button id="btn16" class="button" onclick=declareMode(3)>Lydian</button>
             </div>
 
             <div id="modeButtons">
-                <button id="btn17" class="button" onclick=itIsMixolydian()>Mixolydian</button>
-                <button id="btn18" class="button" onclick=itIsMinor()>Aeolian (Minor)</button>
-                <button id="btn19" class="button" onclick=itIsLocrian()>Locrian</button>
+                <button id="btn17" class="button" onclick=declareMode(4)>Mixolydian</button>
+                <button id="btn18" class="button" onclick=declareMode(5)>Aeolian (Minor)</button>
+                <button id="btn19" class="button" onclick=declareMode(6)>Locrian</button>
             </div>
 
         </div>
