@@ -9,33 +9,37 @@ let keys = [
     'C ', 'C# ', 'D ', 'D# ', 'E ', 'F ', 'F# ', 'G ', 'G# ', 'A ', 'A# ', 'B '
 ];
 
-let modes = [
-    /*0       1         2           3*/
-    'Major', 'Dorian', 'Phrygian', 'Lydian',
-    /*4            5        6*/
-    'Mixolydian', 'Minor', 'Locrian'
-]
-
-var mode;
-var choosenMode = 0;
-
-function declareMode(thisMode) {
-    choosenMode = thisMode;
-    mode = modes[thisMode];
-    modeLabel.innerHTML = mode;
-}
-
-function declareRoot(root, choosenMode) {
+function declareRoot(root) {
 
     keyLabel.innerHTML = keys[root];
 
-    switch (choosenMode) {
+}
+
+function showNotes(root, mode) {
+
+    switch (mode) {
         case 0:
             text.innerHTML = keys[root] + keys[root + 2] + keys[root + 4] +
                 keys[root + 5] + keys[root + 7] + keys[root + 9] + keys[root + 11];
-        case 1:
-            text.innerHTML = keys[root] + keys[root + 3] + keys[root + 5] +
-                keys[root + 6] + keys[root + 7] + keys[root + 9] + keys[root + 11];
+            /* case 1:
+                text.innerHTML = keys[root] + keys[root + 2] + keys[root + 4] +
+                    keys[root + 5] + keys[root + 7] + keys[root + 9] + keys[root + 11];
+            case 2:
+                text.innerHTML = keys[root] + keys[root + 2] + keys[root + 4] +
+                    keys[root + 5] + keys[root + 7] + keys[root + 9] + keys[root + 11];
+            case 3:
+                text.innerHTML = keys[root] + keys[root + 2] + keys[root + 4] +
+                    keys[root + 5] + keys[root + 7] + keys[root + 9] + keys[root + 11];
+            case 4:
+                text.innerHTML = keys[root] + keys[root + 2] + keys[root + 4] +
+                    keys[root + 5] + keys[root + 7] + keys[root + 9] + keys[root + 11];
+            case 5:
+                text.innerHTML = keys[root] + keys[root + 2] + keys[root + 4] +
+                    keys[root + 5] + keys[root + 7] + keys[root + 9] + keys[root + 11];
+            case 6:
+                text.innerHTML = keys[root] + keys[root + 2] + keys[root + 4] +
+                    keys[root + 5] + keys[root + 7] + keys[root + 9] + keys[root + 11];
+                    */
         default:
             text.innerHTML = keys[root] + keys[root + 2] + keys[root + 4] +
                 keys[root + 5] + keys[root + 7] + keys[root + 9] + keys[root + 11];
@@ -43,6 +47,12 @@ function declareRoot(root, choosenMode) {
 
 }
 
+let modes = [
+    /*0       1         2           3*/
+    'Major', 'Dorian', 'Phrygian', 'Lydian',
+    /*4            5        6*/
+    'Mixolydian', 'Minor', 'Locrian'
+]
 
 /* 
 
