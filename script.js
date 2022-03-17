@@ -2,52 +2,1103 @@ const text = document.getElementById('text');
 const keyLabel = document.getElementById('key');
 const modeLabel = document.getElementById('mode');
 
-let keys = [
-    /*0    1      2     3      4     5     6      7     8      9     10     11*/
-    'C ', 'C# ', 'D ', 'D# ', 'E ', 'F ', 'F# ', 'G ', 'G# ', 'A ', 'A# ', 'B ',
-    /*12   13     14    15     16    17    18     19    20     21    22     23*/
-    'C ', 'C# ', 'D ', 'D# ', 'E ', 'F ', 'F# ', 'G ', 'G# ', 'A ', 'A# ', 'B '
+let keyA = [
+    'C', // 0
+    'D', // 1
+    'E', // 2
+    'F', // 3
+    'G', // 4
+    'A', // 5
+    'B', // 6
+    // break
+    'C', // 7
+    'D', // 8
+    'E', // 9
+    'F', // 10
+    'G', // 11
+    'A', // 12
+    'B', // 13
+    // break
 ];
 
-function declareRoot(root) {
+let mode = 0;
 
-    keyLabel.innerHTML = keys[root];
+function key(root) {
+
+    keyLabel.innerHTML = keyA[root];
+
+    display(root);
 
 }
 
-function showNotes(root, mode) {
+function modes(choosenMode) {
 
-    switch (mode) {
-        case 0:
-            text.innerHTML = keys[root] + keys[root + 2] + keys[root + 4] +
-                keys[root + 5] + keys[root + 7] + keys[root + 9] + keys[root + 11];
-            /* case 1:
-                text.innerHTML = keys[root] + keys[root + 2] + keys[root + 4] +
-                    keys[root + 5] + keys[root + 7] + keys[root + 9] + keys[root + 11];
-            case 2:
-                text.innerHTML = keys[root] + keys[root + 2] + keys[root + 4] +
-                    keys[root + 5] + keys[root + 7] + keys[root + 9] + keys[root + 11];
-            case 3:
-                text.innerHTML = keys[root] + keys[root + 2] + keys[root + 4] +
-                    keys[root + 5] + keys[root + 7] + keys[root + 9] + keys[root + 11];
-            case 4:
-                text.innerHTML = keys[root] + keys[root + 2] + keys[root + 4] +
-                    keys[root + 5] + keys[root + 7] + keys[root + 9] + keys[root + 11];
-            case 5:
-                text.innerHTML = keys[root] + keys[root + 2] + keys[root + 4] +
-                    keys[root + 5] + keys[root + 7] + keys[root + 9] + keys[root + 11];
-            case 6:
-                text.innerHTML = keys[root] + keys[root + 2] + keys[root + 4] +
-                    keys[root + 5] + keys[root + 7] + keys[root + 9] + keys[root + 11];
-                    */
+    modeLabel.innerHTML = modeA[choosenMode];
+
+    mode = choosenMode;
+
+}
+
+function display(root, mode = 0) {
+
+    switch (root) {
+        case 0: // C 
+            switch (mode) {
+                case 0: // Major
+                    text.innerHTML = [keyA[root] + ' ' + keyA[root + 1] + ' ' + keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' + keyA[root + 4] + ' ' + keyA[root + 5] + ' ' + keyA[root + 6]
+                    ]
+                    break;
+                case 1: // Dorian
+                    text.innerHTML = [keyA[root] + ' ' + keyA[root + 1] + ' ' + keyA[root + 2] + 'b ' +
+                        keyA[root + 3] + ' ' + keyA[root + 4] + ' ' + keyA[root + 5] + ' ' + keyA[root + 6] + 'b'
+                    ]
+                    break;
+                case 2: // Phrygian
+                    text.innerHTML = [keyA[root] + ' ' + keyA[root + 1] + 'b ' + keyA[root + 2] + 'b ' +
+                        keyA[root + 3] + ' ' + keyA[root + 4] + ' ' + keyA[root + 5] + 'b ' + keyA[root + 6] + 'b'
+                    ]
+                    break;
+                case 3: // Lydian
+                    text.innerHTML = [keyA[root] + ' ' + keyA[root + 1] + ' ' + keyA[root + 2] + ' ' +
+                        keyA[root + 3] + '# ' + keyA[root + 4] + ' ' + keyA[root + 5] + ' ' + keyA[root + 6]
+                    ]
+                    break;
+                case 4: // Mixolydian 
+                    text.innerHTML = [keyA[root] + ' ' + keyA[root + 1] + ' ' + keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' + keyA[root + 4] + ' ' + keyA[root + 5] + ' ' + keyA[root + 6] + 'b'
+                    ]
+                    break;
+                case 5: // Minor 
+                    text.innerHTML = [keyA[root] + ' ' + keyA[root + 1] + ' ' + keyA[root + 2] + 'b ' +
+                        keyA[root + 3] + ' ' + keyA[root + 4] + ' ' + keyA[root + 5] + 'b ' + keyA[root + 6] + 'b'
+                    ]
+                    break;
+                case 6: // Locrian
+                    text.innerHTML = [keyA[root] + ' ' + keyA[root + 1] + 'b ' + keyA[root + 2] + 'b ' +
+                        keyA[root + 3] + ' ' + keyA[root + 4] + 'b ' + keyA[root + 5] + 'b ' + keyA[root + 6] + 'b'
+                    ]
+                    break;
+                default:
+                    text.innerHTML = 'default'
+                    break;
+            }
+            break;
+        case 1: // C# *
+            switch (mode) {
+                case 0: // Major
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 1: // Dorian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 2: // Phrygian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 3: // Lydian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 4: // Mixolydian 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 5: // Minor 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 6: // Locrian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                default:
+                    text.innerHTML = 'default'
+                    break;
+            }
+            break;
+        case 2: // D
+            switch (mode) {
+                case 0: // Major
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + '# ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + '# '
+                    ]
+                    break;
+                case 1: // Dorian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 2: // Phrygian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + 'b ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + 'b ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 3: // Lydian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + '# ' +
+                        keyA[root + 3] + '# ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + '# '
+                    ]
+                    break;
+                case 4: // Mixolydian 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + '# ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 5: // Minor 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + 'b ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 6: // Locrian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + 'b ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + 'b ' +
+                        keyA[root + 5] + 'b ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                default:
+                    text.innerHTML = 'default'
+                    break;
+            }
+            break;
+        case 3: // D# *
+            switch (mode) {
+                case 0: // Major
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 1: // Dorian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 2: // Phrygian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 3: // Lydian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 4: // Mixolydian 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 5: // Minor 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 6: // Locrian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                default:
+                    text.innerHTML = 'default'
+                    break;
+            }
+            break;
+        case 3: // D# *
+            switch (mode) {
+                case 0: // Major
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 1: // Dorian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 2: // Phrygian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 3: // Lydian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 4: // Mixolydian 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 5: // Minor 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 6: // Locrian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                default:
+                    text.innerHTML = 'default'
+                    break;
+            }
+            break;
+        case 4: // E *
+            switch (mode) {
+                case 0: // Major
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 1: // Dorian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 2: // Phrygian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 3: // Lydian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 4: // Mixolydian 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 5: // Minor 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 6: // Locrian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                default:
+                    text.innerHTML = 'default'
+                    break;
+            }
+            break;
+        case 5: // F *
+            switch (mode) {
+                case 0: // Major
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 1: // Dorian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 2: // Phrygian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 3: // Lydian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 4: // Mixolydian 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 5: // Minor 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 6: // Locrian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                default:
+                    text.innerHTML = 'default'
+                    break;
+            }
+            break;
+        case 6: // F# *
+            switch (mode) {
+                case 0: // Major
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 1: // Dorian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 2: // Phrygian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 3: // Lydian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 4: // Mixolydian 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 5: // Minor 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 6: // Locrian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                default:
+                    text.innerHTML = 'default'
+                    break;
+            }
+            break;
+        case 7: // G *
+            switch (mode) {
+                case 0: // Major
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 1: // Dorian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 2: // Phrygian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 3: // Lydian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 4: // Mixolydian 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 5: // Minor 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 6: // Locrian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                default:
+                    text.innerHTML = 'default'
+                    break;
+            }
+            break;
+        case 8: // G# *
+            switch (mode) {
+                case 0: // Major
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 1: // Dorian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 2: // Phrygian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 3: // Lydian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 4: // Mixolydian 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 5: // Minor 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 6: // Locrian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                default:
+                    text.innerHTML = 'default'
+                    break;
+            }
+            break;
+        case 9: // A *
+            switch (mode) {
+                case 0: // Major
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 1: // Dorian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 2: // Phrygian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 3: // Lydian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 4: // Mixolydian 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 5: // Minor 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 6: // Locrian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                default:
+                    text.innerHTML = 'default'
+                    break;
+            }
+            break;
+        case 10: // A# *
+            switch (mode) {
+                case 0: // Major
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 1: // Dorian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 2: // Phrygian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 3: // Lydian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 4: // Mixolydian 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 5: // Minor 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 6: // Locrian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                default:
+                    text.innerHTML = 'default'
+                    break;
+            }
+            break;
+        case 11: // B *
+            switch (mode) {
+                case 0: // Major
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 1: // Dorian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 2: // Phrygian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 3: // Lydian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 4: // Mixolydian 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 5: // Minor 
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                case 6: // Locrian
+                    text.innerHTML = [
+                        keyA[root] + ' ' +
+                        keyA[root + 1] + ' ' +
+                        keyA[root + 2] + ' ' +
+                        keyA[root + 3] + ' ' +
+                        keyA[root + 4] + ' ' +
+                        keyA[root + 5] + ' ' +
+                        keyA[root + 6] + ' '
+                    ]
+                    break;
+                default:
+                    text.innerHTML = 'default'
+                    break;
+            }
+            break;
         default:
-            text.innerHTML = keys[root] + keys[root + 2] + keys[root + 4] +
-                keys[root + 5] + keys[root + 7] + keys[root + 9] + keys[root + 11];
+            break;
     }
 
 }
 
-let modes = [
+let modeA = [
     /*0       1         2           3*/
     'Major', 'Dorian', 'Phrygian', 'Lydian',
     /*4            5        6*/
